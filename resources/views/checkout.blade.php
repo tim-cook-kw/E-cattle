@@ -17,18 +17,16 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <form id="checkout-form" class="clearfix">
+            <form id="checkout-form" class="clearfix" method="POST" action="{{url('checkout')}}" enctype="multipart/form-data">
                 <div class="col-md-6">
                     <div class="billing-details">
-                        <p>Already a customer ? <a href="{{ url('/blank') }}">Login</a></p>
+                        <p>Already a customer ? <a href="{{ url('/login') }}">Login</a></p>
                         <div class="section-title">
-                            <h3 class="title">Billing Details</h3>
+                        @csrf
+                        <h3 class="title">Billing Details</h3>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="first-name" placeholder="First Name">
-                        </div>
-                        <div class="form-group">
-                            <input class="input" type="text" name="last-name" placeholder="Last Name">
+                            <input class="input" type="text" name="fullname" placeholder="Full Name">
                         </div>
                         <div class="form-group">
                             <input class="input" type="email" name="email" placeholder="Email">
@@ -37,16 +35,19 @@
                             <input class="input" type="text" name="address" placeholder="Address">
                         </div>
                         <div class="form-group">
+                            <input class="input" type="text" name="address2" placeholder="Address 2">
+                        </div>
+                        <div class="form-group">
                             <input class="input" type="text" name="city" placeholder="City">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="country" placeholder="Country">
+                            <input class="input" type="text" name="province" placeholder="Country">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+                            <input class="input" type="text" name="postal_code" placeholder="ZIP Code">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="tel" name="tel" placeholder="Telephone">
+                            <input class="input" type="tel" name="phone_number" placeholder="Telephone">
                         </div>
                         <div class="form-group">
                             <div class="input-checkbox">

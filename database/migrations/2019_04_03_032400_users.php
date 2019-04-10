@@ -19,11 +19,11 @@ class Users extends Migration
             $table->string("email", 50)->unique();
             $table->string("password");
             $table->string("auth_token", 100)->unique();
-            $table->binary("photo")->nullable()->default("https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png");
+            $table->string("photo")->default("default.jpg");
             $table->timestamp("created_at")->useCurrent();
-            $table->boolean("is_active");
-            $table->timestamp("last_login")->useCurrent();
-            $table->boolean("is_seller");
+            $table->boolean("is_active")->default(false);
+            $table->datetime("last_login")->nullable();
+            $table->boolean("is_seller")->default(false);
         });
     }
 

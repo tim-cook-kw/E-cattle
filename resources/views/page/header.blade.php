@@ -39,7 +39,7 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="#">
+                    <a class="logo" href="{{ url('/') }}">
                         <img src="./img/logo.png" alt="">
                     </a>
                 </div>
@@ -69,7 +69,7 @@
                             </div>
                             <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                         </div>
-                        <a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+                        <a href="{{ url('/login') }}" class="text-uppercase">Login</a> / <a href="{{ url('/login') }}" class="text-uppercase">Join</a>
                         <ul class="custom-menu">
                             <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="shopping-cart-btns">
                                     <button class="main-btn">View Cart</button>
-                                    <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
+                                    <button class="primary-btn" onclick="window.location.href='{{ url('/checkout') }}'">Checkout <i class="fa fa-arrow-circle-right"></i></button>
                                 </div>
                             </div>
                         </div>

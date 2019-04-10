@@ -14,9 +14,6 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/checkout', function () {
-    return view('checkout');
-});
 Route::get('/product_name', function () {
     return view('product_info');
 });
@@ -26,6 +23,7 @@ Route::get('/product', function () {
 Route::get('/blank', function () {
     return view('blank');
 });
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('login','loginController@getlogin')->name('signin');
+Route::post('login','loginController@postlogin')->name('postsigin');
+Route::resource('register', 'UserController');
+Route::resource('checkout', 'CheckoutController');

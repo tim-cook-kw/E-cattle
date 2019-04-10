@@ -17,12 +17,11 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <form id="checkout-form" class="clearfix" method="post" action="{{ route('postsigin')}}">
-            @csrf
+         
                 <div class="col-md-6">
                     <div class="payments-methods">
                         <div class="section-title">
-                            <h4 class="title">Login using Social Media</h4>
+                            <h4 class="title">Signup using Social Media</h4>
                         </div>
                         <div class="form-group row">
                             <a href="{{ url('/auth/google') }}"><i class="fa fa-google"></i> Google</a>
@@ -30,11 +29,16 @@
                             <a href="{{ url('/auth/facebook') }}"><i class="fa fa-facebook"></i> Facebook</a>
                         </div>
                     </div>
-                </div>           
+                </div>
                 <div class="col-md-6">
                     <div class="login-details">
                         <div class="section-title">
-                            <h3 class="title">Login</h3>
+                            <h3 class="title">Signup</h3>
+                        </div> 
+                        <form method="POST" action="{{url('register')}}" enctype="multipart/form-data">   
+                        @csrf
+                                             <div class="form-group">
+                            <input class="input" type="text" name="username" placeholder="username">
                         </div>
                         <div class="form-group">
                             <input class="input" type="email" name="email" placeholder="Email">
@@ -43,13 +47,14 @@
                             <input class="input" type="password" name="password" placeholder="Password">
                         </div>
                         <div class="pull-right">
-                            <button type="submit"class="primary-btn">Login</button>
+                            <button type="submit" class="primary-btn">Signup</button>
                         </div>
                         </form>
-                        <p>Not a customer ? <a href="{{ url('/register') }}">Register</a></p>
+                        <p>You Already Register? <a href="{{ url('/login') }}">Login</a></p>
                     </div>
                 </div>
-</form>
+
+           
         </div>
         <!-- /row -->
     </div>

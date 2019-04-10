@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public $timestamps = false;
+
+    public function User(){
+    return $this->belongsTo('App\checkout', 'user_id');
+    }
+    
 }

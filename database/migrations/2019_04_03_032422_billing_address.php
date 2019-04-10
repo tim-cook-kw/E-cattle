@@ -25,8 +25,7 @@ class BillingAddress extends Migration
             $table->string("phone_number");
             $table->string("email");
             $table->integer("shipping_id")->unsigned();
-            $table->boolean("sameAsShipping");
-
+            $table->boolean("sameAsShipping")->default(false);
             $table->foreign("shipping_id")->references("id")->on("shipping_address")->onDelete("cascade");
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
         });
